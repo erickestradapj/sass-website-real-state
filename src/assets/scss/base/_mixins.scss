@@ -21,25 +21,25 @@
 
 @mixin button($color, $text) {
    background-color: $color;
-   font-size: 2rem;
-   padding: 1.2rem 4rem;
-   font-weight: 700;
-   display: block;
-   width: 100%;
-   text-align: center;
+   padding: 1.5rem 4rem;
    color: $text;
-   text-decoration: none;
-   transition: background-color 0.3s ease;
+   margin-top: 2rem;
+   font-size: 2rem;
+   font-weight: 400;
+   display: inline-block;
+   font-weight: 700;
    border: none;
+   transition-property: background-color;
+   transition-duration: 0.3s;
+   text-align: center;
 
    &:hover {
       cursor: pointer;
-      background-color: darken($color, 10);
+      background-color: darken($color, 10%);
    }
 
    @include tablet {
       width: auto;
-      display: inline-block;
    }
 }
 
@@ -81,4 +81,27 @@
    background-repeat: no-repeat;
    background-position: 50% 2rem;
    background-size: 10rem;
+}
+
+@mixin heading {
+   font-weight: 400;
+
+   span {
+      font-weight: 700;
+   }
+
+   &::after {
+      content: '';
+      display: block;
+      height: 1rem;
+      width: 15rem;
+      margin-top: 1rem;
+      background-image: linear-gradient(
+         to right,
+         v.$primary 0%,
+         v.$primary 50%,
+         lighten(v.$primary, 20%) 50%,
+         lighten(v.$primary, 20%) 100%
+      );
+   }
 }
