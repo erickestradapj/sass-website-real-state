@@ -1,0 +1,37 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+}
+
+body {
+   font-family: v.$font-main;
+   font-size: 1.6rem;
+   background-color: darken(v.$gray-light, 3%);
+}
+
+img {
+   max-width: 100%;
+   display: block;
+}
+
+.container {
+   width: 95%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.section {
+   padding: 3rem 0;
+
+   @include m.tablet {
+      padding: 8rem 0;
+   }
+}
