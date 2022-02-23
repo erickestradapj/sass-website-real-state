@@ -83,11 +83,15 @@
    background-size: 10rem;
 }
 
-@mixin heading {
+@mixin heading($break: false) {
    font-weight: 400;
 
    span {
       font-weight: 700;
+
+      @if $break {
+         display: block;
+      }
    }
 
    &::after {
