@@ -541,7 +541,7 @@ a {
 }
 .property__image {
   aspect-ratio: 10/6;
-  background-size: cover;
+  background-size: auto 150%;
   position: relative;
 }
 .property:nth-child(1) .property__image {
